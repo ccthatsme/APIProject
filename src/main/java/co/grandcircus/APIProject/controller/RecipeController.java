@@ -1,6 +1,7 @@
 package co.grandcircus.APIProject.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -59,7 +60,9 @@ public class RecipeController {
 		ModelAndView mv = new ModelAndView("search-results");
 
 		if(word != null && !word.equals("")) {
-			System.out.println(recipeRepo.searchByKeyWord(word));
+			List<Recipe> results = recipeRepo.searchByKeyWord(word);
+			mv.addObject("results", results);
+			System.out.println();
 		} else {
 			System.out.println("Empty list");
 		}

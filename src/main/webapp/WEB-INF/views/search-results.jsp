@@ -11,7 +11,7 @@
 <body>
 <div class="container">
 	<h1>Search Results</h1>	
-<table>
+<table class="table">
   <tr>
     <th>Food Name</th>
     <th></th>
