@@ -56,8 +56,13 @@ public class RecipeController {
 
 	@RequestMapping("Search")
 	public ModelAndView search(@RequestParam(name = "search-word", required = false) String word, @RequestParam(name = "search-ingredient", required = false) String ingredient) {
-		ModelAndView mv = new ModelAndView();
+		ModelAndView mv = new ModelAndView("search-results");
 
+		if(word != null && !word.equals("")) {
+			System.out.println(recipeRepo.searchByKeyWord(word));
+		} else {
+			System.out.println("Empty list");
+		}
 		return mv;
 	}
 
