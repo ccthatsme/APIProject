@@ -23,7 +23,7 @@
     <td><a href="${c.href }">${c.title }</a></td>
     <td><img src="${c.thumbnail }"></td>
     <td>${c.ingredients }</td>
-    <td><input class="btn btn-primary" action="add-favorite" value="Add to Favorites"></td>
+    <td><a href="add-favorite" class="btn btn-primary">Add to Favorites</a></td>
   </tr>
   </c:forEach>
 </table>
