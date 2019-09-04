@@ -13,4 +13,7 @@ public interface RecipeRepo extends JpaRepository<Recipe, Long> {
 
 	@Query(value = "select * from recipe where title like %?%", nativeQuery = true)
 	List<Recipe> searchByKeyWord(String recipeName);
+	
+	@Query(value = "select * from recipe where ingredients like %?%", nativeQuery = true)
+	List<Recipe> searchByIngredient(String ingredient);
 }

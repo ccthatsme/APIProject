@@ -1,6 +1,7 @@
 package co.grandcircus.APIProject.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,13 +60,21 @@ public class RecipeController {
 	public ModelAndView search(@RequestParam(name = "search-word", required = false) String word, @RequestParam(name = "search-ingredient", required = false) String ingredient) {
 		ModelAndView mv = new ModelAndView("search-results");
 
+		ArrayList<Recipe> results = new ArrayList<>();
 		if(word != null && !word.equals("")) {
-			List<Recipe> results = recipeRepo.searchByKeyWord(word);
-			mv.addObject("results", results);
-			System.out.println();
-		} else {
+			List<Recipe> resultsByKeyword = recipeRepo.searchByKeyWord(word);
+			results.addAll(resultsByKeyword);
+			System.out.println(resultsByKeyword);
+		} if(ingredient != null && !ingredient.equals("")) {
+			List<Recipe> resultsByIngredient = recipeRepo.searchByIngredient(ingredient);
+			results.addAll(resultsByIngredient);
+			System.out.println(resultsByIngredient);
+		}
+		else {
 			System.out.println("Empty list");
 		}
+		mv.addObject("results", results);
+		
 		return mv;
 	}
 
