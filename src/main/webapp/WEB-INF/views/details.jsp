@@ -13,11 +13,11 @@
 	<h1>Individual Details</h1>	
 <table>
   <tr>
-    <td><a href="${results.href }">${results.title }</a></td>
-    <td>${c.thumbnail }</td>
+    <td><a href="${individual.href }">${individual.title }</a></td>
+    <td>${individual.thumbnail }</td>
   </tr>
   <tr>
-    <td>${c.ingredients }</td>
+    <td>${individual.ingredients }</td>
     </tr>
 </table>
 <input action="favorites" class="btn btn-primary" type="submit" value="View Favorites">
