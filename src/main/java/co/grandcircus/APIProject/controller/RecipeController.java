@@ -1,4 +1,4 @@
-package co.grandcircus.APIProject;
+package co.grandcircus.APIProject.controller;
 
 import org.springframework.stereotype.Controller;
 
