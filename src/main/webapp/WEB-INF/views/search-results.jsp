@@ -21,7 +21,7 @@
   <c:forEach var="c" items="${results}">
   <tr>
     <td><a href="${c.href }">${c.title }</a></td>
-    <td>${c.thumbnail }</td>
+    <td><img src="${c.thumbnail }"></td>
     <td>${c.ingredients }</td>
     <td><input class="btn btn-primary" action="add-favorite" value="Add to Favorites"></td>
   </tr>
