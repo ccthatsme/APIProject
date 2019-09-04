@@ -16,14 +16,14 @@ import co.grandcircus.APIProject.model.RecipeResults;
 
 @Controller
 public class RecipeController {
-	
+
 	RestTemplate rt = new RestTemplate();
 	ObjectMapper objMap = new ObjectMapper();
-	
+
 	@RequestMapping("/")
 	public ModelAndView home() {
 		String url = "http://www.recipepuppy.com/api/";
-		
+
 		String recipe = rt.getForObject(url, String.class);
 		recipe = recipe.replace("\\/", "/");
 		ModelAndView mv = new ModelAndView("index", "test", recipe);
@@ -32,27 +32,21 @@ public class RecipeController {
 			mv.addObject("parentObj", parent);
 		} catch (JsonParseException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} catch (JsonMappingException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
-		
+
 //		mv.addObject("results", parent);
 		return mv;
 	}
-	
+
 	@RequestMapping("Search")
-	public ModelAndView search(@RequestParam(name = "search-word") String word, @RequestParam("search-ingredient") String ingredient) {
+	public ModelAndView search(@RequestParam(name = "search-word", required = false) String word, @RequestParam(name = "search-ingredient", required = false) String ingredient) {
 		ModelAndView mv = new ModelAndView();
-		
-		
-		
-		
+
 		return mv;
 	}
-	
+
 }
