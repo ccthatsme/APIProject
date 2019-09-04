@@ -14,7 +14,6 @@ public class RecipeResults {
 
 	public RecipeResults() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public String getHref() {

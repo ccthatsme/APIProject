@@ -21,7 +21,7 @@
 	<input action="favorites" class="btn btn-primary" type="submit" value="View Favorites">
 	
 	<p>${test }</p>
-	<p>${parentObj }</p>
+	<p>${recipeList }</p>
 </div>
 </body>
 </html>

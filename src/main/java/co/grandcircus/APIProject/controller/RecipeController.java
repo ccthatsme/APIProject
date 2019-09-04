@@ -2,6 +2,7 @@ package co.grandcircus.APIProject.controller;
 
 import java.io.IOException;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,11 +13,16 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import co.grandcircus.APIProject.model.Recipe;
 import co.grandcircus.APIProject.model.RecipeResults;
+import co.grandcircus.APIProject.repo.RecipeRepo;
 
 @Controller
 public class RecipeController {
 
+	@Autowired
+	private RecipeRepo recipeRepo;
+	
 	RestTemplate rt = new RestTemplate();
 	ObjectMapper objMap = new ObjectMapper();
 
@@ -29,7 +35,13 @@ public class RecipeController {
 		ModelAndView mv = new ModelAndView("index", "test", recipe);
 		try {
 			RecipeResults parent = objMap.readValue(recipe, RecipeResults.class);
-			mv.addObject("parentObj", parent);
+			mv.addObject("recipeList", parent.getRecipes());
+			
+			for(Recipe r: parent.getRecipes()) {
+				if(!recipeRepo.existsByHref(r.getHref())) {
+					recipeRepo.save(r);
+				}
+			}
 		} catch (JsonParseException e) {
 			// TODO Auto-generated catch block
 		} catch (JsonMappingException e) {
