@@ -18,7 +18,7 @@
 		<input class="btn btn-primary" type="submit" value="Search">
 	</form>
 	<br>
-	<input action="favorites" class="btn btn-primary" type="submit" value="View Favorites">
+	<a href="favorites" class="btn btn-primary">View Favorites</a>
 	
 	<p>${test }</p>
 	<p>${recipeList }</p>

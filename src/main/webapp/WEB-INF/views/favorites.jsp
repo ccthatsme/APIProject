@@ -23,7 +23,7 @@
     <td><a href="${c.href }">${c.title }</a></td>
     <td>${c.thumbnail }</td>
     <td>${c.ingredients }</td>
-    <td><input class="btn btn-primary" action="delete" value="Remove"></td>
+    <td><a href="remove" class="btn btn-primary">Remove</a></td>
   </tr>
   </c:forEach>
 </table>
