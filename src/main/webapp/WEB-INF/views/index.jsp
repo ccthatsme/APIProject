@@ -19,9 +19,6 @@
 	</form>
 	<br>
 	<a href="favorites" class="btn btn-primary">View Favorites</a>
-	
-	<p>${test }</p>
-	<p>${recipeList }</p>
 </div>
 </body>
 </html>
