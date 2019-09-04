@@ -9,8 +9,16 @@
 <title>Welcome</title>
 </head>
 <body>
-	<h1>Hello, world</h1>
+<div class="container">
+	<h1>Mmm, fooooood...</h1>
 	
-	${test }
+		<form action="Search">
+		<input type="text" name="search-word" placeholder="Name Search">
+		<input type="text" name="search-ingredient" placeholder="Ingredient Search">  
+		<input class="btn btn-primary" type="submit" value="Search">
+	</form>
+	<br>
+	<input action="favorites" class="btn btn-primary" type="submit" value="View Favorites">
+</div>
 </body>
 </html>
