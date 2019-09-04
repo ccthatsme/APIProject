@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -41,6 +42,16 @@ public class RecipeController {
 		}
 		
 //		mv.addObject("results", parent);
+		return mv;
+	}
+	
+	@RequestMapping("Search")
+	public ModelAndView search(@RequestParam(name = "search-word") String word, @RequestParam("search-ingredient") String ingredient) {
+		ModelAndView mv = new ModelAndView();
+		
+		
+		
+		
 		return mv;
 	}
 	
