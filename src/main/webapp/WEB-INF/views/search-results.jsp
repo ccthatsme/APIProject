@@ -27,7 +27,7 @@
   </tr>
   </c:forEach>
 </table>
-<input action="favorites" class="btn btn-primary" type="submit" value="View Favorites">
+<a href="favorites" class="btn btn-primary">View Favorites</a>
 </div>
 </body>
 </html>
