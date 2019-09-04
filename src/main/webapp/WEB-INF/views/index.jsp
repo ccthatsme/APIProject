@@ -19,6 +19,8 @@
 	</form>
 	<br>
 	<input action="favorites" class="btn btn-primary" type="submit" value="View Favorites">
+	
+	<p>${test }</p>
 </div>
 </body>
 </html>

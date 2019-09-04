@@ -15,7 +15,9 @@ public class RecipeController {
 		String url = "http://www.recipepuppy.com/api/";
 		
 		String recipe = rt.getForObject(url, String.class);
+//		RecipeResults parent = rt.getForObject(url, RecipeResults.class);
 		ModelAndView mv = new ModelAndView("index", "test", recipe);
+//		mv.addObject("results", parent);
 		return mv;
 	}
 	
